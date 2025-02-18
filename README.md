@@ -26,7 +26,7 @@ Before running this project, ensure you have the following prerequisites install
 
 2. **Clone the Project**
    ```bash
-   git clone [your-repository-url]
+   git clone https://github.com/helinyi/assignment1
    cd mycv
    ```
 
