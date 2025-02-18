@@ -27,7 +27,7 @@ Before running this project, ensure you have the following prerequisites install
 2. **Clone the Project**
    ```bash
    git clone https://github.com/helinyi/assignment1
-   cd mycv
+   cd assignment1
    ```
 
 3. **Initialize Database**
