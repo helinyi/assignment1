@@ -1,0 +1,64 @@
+{# cv_template.html #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }}'s CV</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <p>
+        <a href="{{ linkedin }}">LinkedIn</a> | 
+        {{ phone }} | 
+        <a href="mailto:{{ email }}">{{ email }}</a>
+    </p>
+
+    <h2>EDUCATION</h2>
+    {% for edu in education %}
+    <div class="education-item">
+        <h3>{{ edu.school }}</h3>
+        <p>{{ edu.degree }}</p>
+        <p>{{ edu.location }}</p>
+        <p>{{ edu.period }}</p>
+    </div>
+    {% endfor %}
+
+    <h2>SKILLS & CERTIFICATION</h2>
+    <div class="skills">
+        <p><strong>Skills:</strong> {{ skills|join:", " }}</p>
+        <p><strong>Certification:</strong> {{ certification }}</p>
+    </div>
+
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    {% for exp in professional_experience %}
+    <div class="experience-item">
+        <h3>{{ exp.company }}</h3>
+        <p><em>{{ exp.title }}</em></p>
+        <p>{{ exp.period }}</p>
+        
+        {% for project in exp.projects %}
+        <div class="project">
+            <h4>{{ project.name }}:</h4>
+            <ul>
+                {% for detail in project.details %}
+                <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+    <h2>OTHER RELEVANT EXPERIENCES</h2>
+    {% for exp in other_experience %}
+    <div class="other-exp-item">
+        <h3>{{ exp.title }}</h3>
+        <p>{{ exp.location }}</p>
+        <ul>
+            {% for detail in exp.details %}
+            <li>{{ detail }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>
